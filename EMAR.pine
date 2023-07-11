@@ -1,0 +1,35 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © akitoshi_manabe
+
+//@version=5
+indicator(title = "指数平滑移動平均線(Type-R)", shorttitle="EMA-Rin", overlay=true, timeframe="", timeframe_gaps=true)
+
+// EMA1
+len1 = input.int(defval = 25, title = "Length", minval=25, maxval=25, inline = "EMA25")
+source1 = input.source(defval = close, title = "Source", inline = "EMA25")
+MA1 = ta.ema(source1, len1)
+plot(MA1, title = "EMA25", color = color.red, linewidth = 1)
+
+// EMA2
+len2 = input.int(defval = 30, title = "Length", minval=30, maxval=30, inline = "EMA30")
+source2 = input.source(defval = close, title = "Source", inline = "EMA30")
+MA2 = ta.ema(source2, len2)
+plot(MA2, title = "EMA30", color = color.fuchsia, linewidth = 1)
+
+// EMA3
+len3 = input.int(defval = 50, title = "Length", minval = 50, maxval=50, inline = "EMA50")
+source3 = input.source(defval = close, title = "Source", inline = "EMA50")
+MA3 = ta.ema(source3, len3)
+plot(MA3, title = "EMA50", color = color.aqua, linewidth = 1)
+
+// EMA4
+len4 = input.int(defval = 100, title = "Length", minval=100, maxval=100, inline = "MA100")
+source4 = input.source(defval = close, title = "Source", inline = "MA100")
+MA4 = ta.ema(source4, len4)
+plot(MA4, title = "EMA100", color = color.green, linewidth = 1)
+
+// EMA5
+len5 = input.int(defval = 200, title = "Length", minval = 200, maxval=200, inline = "EMA200")
+source5 = input.source(defval = close, title = "Source", inline = "EMA200")
+MA5 = ta.ema(source5, len5)
+plot(MA5, title = "EMA200", color = color.yellow, linewidth = 1)
